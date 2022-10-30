@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: default
+spec:
+  rules:
+  - host: bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: bmi-calculator
+          servicePort: 80
+        path: /
+  - host: kibana.bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: kibana-kibana
+          servicePort: 5601
+        path: /
+  - host: grafana.bmi.raylayadi.com
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus-grafana
+          servicePort: 80
+        path: /
