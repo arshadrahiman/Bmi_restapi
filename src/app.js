@@ -27,7 +27,7 @@ app.use(promMetricsRouteHandler)
 app.use(defaultRouteHandler)
 app.use(defaultErrorHandler)
 
-// Server listening on certain port depending on the environment variable or CLI arg
+//  Server listening on certain port depending on the environment variable or CLI arg
 app.listen(config.app.port, () => {
  logger.info(`Server is listening on port ${config.app.port}`)
 })
